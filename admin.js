@@ -1,5 +1,3 @@
-[file name]: admin.js
-[file content begin]
 // Admin Panel JavaScript
 class AdminPanel {
     constructor() {
@@ -667,4 +665,3 @@ class AdminPanel {
 document.addEventListener('DOMContentLoaded', () => {
     window.admin = new AdminPanel();
 });
-[file content end]

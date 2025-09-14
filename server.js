@@ -1,5 +1,3 @@
-[file name]: server.js
-[file content begin]
 // Simulated backend server for demonstration
 // This would be replaced with a real backend in production
 
