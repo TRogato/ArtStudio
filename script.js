@@ -340,7 +340,7 @@ function checkout() {
                    `📞 Gostaria de receber um orçamento detalhado para estes produtos.\n\n` +
                    `Obrigado!`;
     
-    const whatsappUrl = `https://wa.me/5542999999999?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5542999152224?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     
     closeCartModal();
@@ -441,7 +441,7 @@ function setupEventListeners() {
     elements.whatsappBtn.addEventListener('click', (e) => {
         e.preventDefault();
         const message = `Olá! Gostaria de saber mais sobre os serviços da Visual Art Studio.`;
-        const whatsappUrl = `https://wa.me/5542999999999?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/5542999152224?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     });
     
