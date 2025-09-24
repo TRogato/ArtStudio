@@ -91,8 +91,8 @@ class CMSIntegration {
         this.siteInfo = {
             company_name: "Visual Art Studio",
             tagline: "Transforme sua marca com comunicação visual impactante",
-            whatsapp: "5542999999999",
-            email: "contato@visualartstudio.com"
+            whatsapp: "5542999152224",
+            email: "t.rogato@gmail.com"
         };
     }
 
