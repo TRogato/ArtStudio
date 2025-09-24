@@ -1,0 +1,100 @@
+backend:
+  name: github
+  repo: seu-usuario/visual-art-studio # Substitua pelo seu repositório GitHub
+  branch: main # Branch principal do seu repositório
+  site_domain: seu-usuario.github.io # Substitua pelo seu domínio GitHub Pages
+
+# Configuração de mídia
+media_folder: "images" # Pasta onde as imagens serão armazenadas
+public_folder: "/images" # Caminho público para as imagens
+
+# Configurações de localização
+locale: 'pt'
+
+# Configurações das coleções
+collections:
+  # Coleção de Produtos
+  - name: "produtos"
+    label: "Produtos"
+    folder: "_produtos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nome do Produto", name: "title", widget: "string"}
+      - {label: "Categoria", name: "category", widget: "select", options: ["Impressão", "Fachadas", "Adesivos", "Letras", "Placas", "Totens", "Digital", "Luminosos", "Banners", "Construção", "Sinalização", "Displays"]}
+      - {label: "Descrição", name: "description", widget: "text"}
+      - {label: "Preço Original", name: "original_price", widget: "number", value_type: "float"}
+      - {label: "Preço com Desconto", name: "sale_price", widget: "number", value_type: "float"}
+      - {label: "Porcentagem de Desconto", name: "discount_percent", widget: "number", value_type: "int"}
+      - {label: "Imagem do Produto", name: "image", widget: "image"}
+      - {label: "Especificações Técnicas", name: "specifications", widget: "object", fields: [
+          {label: "Material", name: "material", widget: "string"},
+          {label: "Dimensões", name: "dimensions", widget: "string"},
+          {label: "Espessura", name: "thickness", widget: "string"},
+          {label: "Qualidade", name: "quality", widget: "string"},
+          {label: "Estoque", name: "stock", widget: "number", value_type: "int"}
+        ]}
+      - {label: "Características", name: "features", widget: "list", field: {label: "Característica", name: "feature", widget: "string"}}
+      - {label: "Ativo", name: "active", widget: "boolean", default: true}
+      - {label: "Data de Criação", name: "date", widget: "datetime"}
+
+  # Coleção de Configurações do Site
+  - name: "configuracoes"
+    label: "Configurações do Site"
+    files:
+      - label: "Informações Gerais"
+        name: "site_info"
+        file: "_data/site_info.yml"
+        fields:
+          - {label: "Nome da Empresa", name: "company_name", widget: "string"}
+          - {label: "Slogan", name: "tagline", widget: "string"}
+          - {label: "Descrição", name: "description", widget: "text"}
+          - {label: "Telefone WhatsApp", name: "whatsapp", widget: "string"}
+          - {label: "E-mail", name: "email", widget: "string"}
+          - {label: "Endereço", name: "address", widget: "string"}
+          - {label: "Redes Sociais", name: "social", widget: "object", fields: [
+              {label: "Facebook", name: "facebook", widget: "string", required: false},
+              {label: "Instagram", name: "instagram", widget: "string", required: false},
+              {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
+            ]}
+
+  # Coleção de Pedidos (apenas visualização)
+  - name: "pedidos"
+    label: "Pedidos Recebidos"
+    folder: "_pedidos"
+    create: false
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Cliente", name: "customer_name", widget: "string"}
+      - {label: "E-mail", name: "customer_email", widget: "string"}
+      - {label: "Telefone", name: "customer_phone", widget: "string"}
+      - {label: "Produtos", name: "products", widget: "list", fields: [
+          {label: "Nome do Produto", name: "name", widget: "string"},
+          {label: "Quantidade", name: "quantity", widget: "number"},
+          {label: "Preço", name: "price", widget: "number"}
+        ]}
+      - {label: "Total", name: "total", widget: "number"}
+      - {label: "Status", name: "status", widget: "select", options: ["Novo", "Em Análise", "Orçamento Enviado", "Aprovado", "Em Produção", "Concluído", "Cancelado"]}
+      - {label: "Observações", name: "notes", widget: "text", required: false}
+      - {label: "Data do Pedido", name: "date", widget: "datetime"}
+
+  # Coleção de Imagens do Carrossel
+  - name: "carrossel"
+    label: "Imagens do Carrossel"
+    folder: "_carrossel"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Título da Imagem", name: "title", widget: "string"}
+      - {label: "Imagem", name: "image", widget: "image"}
+      - {label: "Texto Alternativo", name: "alt", widget: "string"}
+      - {label: "Ordem de Exibição", name: "order", widget: "number", value_type: "int"}
+      - {label: "Ativa", name: "active", widget: "boolean", default: true}
+
+# Configurações de editor
+editor:
+  preview: false
+
+# Configurações de exibição
+display_url: https://seu-usuario.github.io/visual-art-studio # Substitua pela URL do seu site
+
