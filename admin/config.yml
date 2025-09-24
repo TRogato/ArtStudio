@@ -1,8 +1,8 @@
 backend:
   name: github
-  repo: https://github.com/TRogato/ArtStudio # Substitua pelo seu repositório GitHub
+  repo: TRogato/ArtStudio # Substitua pelo seu repositório GitHub
   branch: main # Branch principal do seu repositório
-  site_domain: https://github.com/TRogato/ArtStudio # Substitua pelo seu domínio GitHub Pages
+  site_domain: https://trogato.github.io/ArtStudio/ # Substitua pelo seu domínio GitHub Pages
 
 # Configuração de mídia
 media_folder: "images" # Pasta onde as imagens serão armazenadas
@@ -96,5 +96,5 @@ editor:
   preview: false
 
 # Configurações de exibição
-display_url: https://github.com/TRogato/ArtStudio # Substitua pela URL do seu site
+display_url: https://trogato.github.io/ArtStudio/ # Substitua pela URL do seu site
 
